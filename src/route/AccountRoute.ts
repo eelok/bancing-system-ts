@@ -11,8 +11,17 @@ const accountMapper = new AccountMapper();
 const accountService = new AccountService(accountRepository, accountMapper);
 
 
-
-router.get('/api/v1/account/:id', (req: Request, res: Response) => {
+router.get('/:id', (req: Request, res: Response) => {
     const accountController = new AccountController(accountService, req, res);
     accountController.getAccount();
 });
+
+router.get('/', (req: Request, res: Response) => {
+    const accountController = new AccountController(accountService, req, res);
+    accountController.getAcountList();
+});
+
+
+export {
+    router
+}

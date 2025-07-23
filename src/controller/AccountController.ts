@@ -1,16 +1,14 @@
-import { Request, Response, NextFunction } from "express";
-import { RequestAccount } from "../models/RequestAccount";
+import { Request, Response } from "express";
 import { HttpStatusCode } from "../HttpStatusCode";
 import { AccountService } from "../service/AccountService";
 import { ResponseAccount } from "../models/ResponseAccount";
-import { HttpException } from "../exception/HttpException";
 
 export class AccountController {
 
     private accountService: AccountService;
     private req: Request;
     private res: Response;
-    private next: NextFunction;
+
 
     constructor(accountService: AccountService, req: Request, res: Response) {
         this.accountService = accountService;
