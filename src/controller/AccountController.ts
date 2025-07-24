@@ -17,8 +17,7 @@ export class AccountController {
     }
 
 
-    public getAccount() {
-        const id = +this.req.params.id;
+    public getAccount(id: number) {
         const foundAccount: ResponseAccount = this.accountService.getById(id);
         this.res.status(HttpStatusCode.OK).json(foundAccount);
     }

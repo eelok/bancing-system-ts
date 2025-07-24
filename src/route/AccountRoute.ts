@@ -4,6 +4,8 @@ import { accountList } from '../db/data';
 import { AccountMapper } from '../mapper/AccountMapper';
 import { AccountRepository } from '../repository/AccountRepository';
 import { AccountService } from '../service/AccountService';
+import { idSchema } from '../validation/accaunt';
+import { number } from 'joi';
 
 const router = Router();
 const accountRepository = new AccountRepository(accountList)
@@ -12,8 +14,15 @@ const accountService = new AccountService(accountRepository, accountMapper);
 
 
 router.get('/:id', (req: Request, res: Response) => {
+    const { error, value } = idSchema.validate(req.params);
+    if (error) {
+        return res.status(400).json({
+            error: "Invalid Id param",
+            details: error.details[0].message
+        })
+    }
     const accountController = new AccountController(accountService, req, res);
-    accountController.getAccount();
+    accountController.getAccount(value.id);
 });
 
 router.get('/', (req: Request, res: Response) => {

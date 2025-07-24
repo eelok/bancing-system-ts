@@ -16,6 +16,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/express": "^5.0.3",
+    "@types/joi": "^17.2.2",
     "@types/node": "^24.1.0",
     "dotenv": "^17.2.0",
     "eslint": "^9.31.0",
@@ -26,5 +27,8 @@
     "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "joi": "^17.13.3"
   }
 }
