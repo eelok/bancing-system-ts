@@ -4,7 +4,7 @@ import { Account } from "../models/Account";
 export const accountList: Array<Account> = [
     {
         id: 100,
-        fullName: "Maria Petri",
+        fullName: "Maria Petri TS",
         iban: "DE2345600012",
         currency: "EURO",
         balance: 1050,
@@ -12,7 +12,7 @@ export const accountList: Array<Account> = [
     },
     {
         id: 200,
-        fullName: "Jan Jan",
+        fullName: "Jan Jan TS",
         iban: "LN21234560003",
         currency: "EURO",
         balance: 500,

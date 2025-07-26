@@ -8,6 +8,7 @@
     "start": "node dist/app.js",
     "dev": "ts-node src/app.ts",
     "dev:watch": "ts-node --watch src/app.ts",
+    "dev:auto": "nodemon --exec \"npm run build && npm start\" --watch src --ext ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/joi": "^17.2.2",
     "@types/node": "^24.1.0",
@@ -29,6 +31,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "joi": "^17.13.3"
   }
 }
