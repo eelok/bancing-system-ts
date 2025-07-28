@@ -9,7 +9,7 @@ dotenv.config();
 const PORT = process.env.PORT || 3050;
 const CLIENT_REACT_URL = process.env.CLIENT_REACT_URL || 'http://localhost:3050';
 
-const corsOprions = {
+const corsOptions = {
     origin: CLIENT_REACT_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -17,7 +17,7 @@ const corsOprions = {
 }
 
 // Middleware
-app.use(cors(corsOprions));
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
